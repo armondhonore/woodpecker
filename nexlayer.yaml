@@ -1,0 +1,19 @@
+application:
+  name: woodpecker
+  pods:
+  - name: server
+    image: woodpeckerci/woodpecker-server:latest
+    path: /
+    servicePorts:
+    - 8000
+    vars:
+      WOODPECKER_OPEN: "true"
+      WOODPECKER_HOST: "https://relaxed-weasel-woodpecker.cloud.nexlayer.ai"
+      WOODPECKER_AGENT_SECRET: "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4"
+      WOODPECKER_ADMIN: "admin"
+      WOODPECKER_DATABASE_DRIVER: sqlite3
+      WOODPECKER_DATABASE_DATASOURCE: "/var/lib/woodpecker/woodpecker.sqlite"
+    volumes:
+    - name: woodpecker-data
+      mountPath: /var/lib/woodpecker
+      size: 5Gi
