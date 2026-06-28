@@ -2,7 +2,7 @@ application:
   name: woodpecker
   pods:
   - name: server
-    image: woodpeckerci/woodpecker-server:latest
+    image: woodpeckerci/woodpecker-server:v3
     path: /
     servicePorts:
     - 8000
@@ -13,6 +13,9 @@ application:
       WOODPECKER_ADMIN: "admin"
       WOODPECKER_DATABASE_DRIVER: sqlite3
       WOODPECKER_DATABASE_DATASOURCE: "/var/lib/woodpecker/woodpecker.sqlite"
+      WOODPECKER_GITHUB: "true"
+      WOODPECKER_GITHUB_CLIENT: "placeholder-github-client-id"
+      WOODPECKER_GITHUB_SECRET: "placeholder-github-client-secret"
     volumes:
     - name: woodpecker-data
       mountPath: /var/lib/woodpecker
