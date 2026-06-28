@@ -2,7 +2,7 @@ application:
   name: woodpecker
   pods:
   - name: server
-    image: woodpeckerci/woodpecker-server:v3
+    image: mirror.gcr.io/woodpeckerci/woodpecker-server:v3
     path: /
     servicePorts:
     - 8000
