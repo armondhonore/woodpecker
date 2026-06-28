@@ -16,7 +16,3 @@ application:
       WOODPECKER_GITHUB: "true"
       WOODPECKER_GITHUB_CLIENT: "placeholder-github-client-id"
       WOODPECKER_GITHUB_SECRET: "placeholder-github-client-secret"
-    volumes:
-    - name: woodpecker-data
-      mountPath: /var/lib/woodpecker
-      size: 5Gi
